@@ -48,7 +48,7 @@ namespace TapBox
             var textBox = (TextBox)sender;
             if (GetShowTouchKeyboardOnTouchDown(textBox))
             {
-                OnScreenKeyboard.Show();
+                TouchKeyboard.Show();
             }
         }
 
@@ -57,14 +57,14 @@ namespace TapBox
             var textBox = Keyboard.FocusedElement as TextBox;
             if (textBox == null || !GetShowTouchKeyboardOnTouchDown(textBox))
             {
-                OnScreenKeyboard.Hide();
+                TouchKeyboard.Hide();
             }
         }
 
         private static void OnClosed(object sender, EventArgs eventArgs)
         {
             ((Window)sender).Closed -= OnClosed;
-            OnScreenKeyboard.Hide();
+            TouchKeyboard.Hide();
         }
     }
 }

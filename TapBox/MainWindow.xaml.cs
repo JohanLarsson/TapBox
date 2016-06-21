@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls.Primitives;
 
 namespace TapBox
 {
+    using System;
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -23,6 +13,30 @@ namespace TapBox
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void OnTouchKeyboardClick(object sender, RoutedEventArgs e)
+        {
+            if (((ToggleButton)sender).IsChecked == true)
+            {
+                TouchKeyboard.Show();
+            }
+            else
+            {
+                TouchKeyboard.Hide();
+            }
+        }
+
+        private void OnOnScreenKeyboardClick(object sender, RoutedEventArgs e)
+        {
+            if (((ToggleButton)sender).IsChecked == true)
+            {
+                OnScreenKeyboard.Show();
+            }
+            else
+            {
+                OnScreenKeyboard.Hide();
+            }
         }
     }
 }
